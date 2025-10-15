@@ -1,0 +1,29 @@
+{
+  "name": "bob_ai",
+  "type": "ai_player",
+  "sprite": "character4.png",
+  "energy": 100,
+  "happiness": 100,
+  "health": 100,
+  "position": {
+    "x": 21,
+    "y": -42,
+    "scene": "campus"
+  },
+  "memory": [],
+  "rules": {
+    "low_energy": {
+      "threshold": 30,
+      "action": "rest"
+    },
+    "low_happiness": {
+      "threshold": 30,
+      "action": "socialize"
+    },
+    "low_health": {
+      "threshold": 30,
+      "action": "eat"
+    }
+  },
+  "bag": []
+}

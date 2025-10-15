@@ -1,0 +1,41 @@
+{
+  "name": "campus",
+  "width": 30,
+  "height": 20,
+  "floor_texture": "bricks.png",
+  "items": [
+    {
+      "name": "Library Entrance",
+      "x": 10,
+      "y": 5,
+      "image": "door.png",
+      "size": 1,
+      "obstacle": false,
+      "interaction": {
+        "type": "scene_change",
+        "target_scene": "library",
+        "target_x": 5,
+        "target_y": 5
+      }
+    },
+    {
+      "name": "Bench",
+      "x": 15,
+      "y": 10,
+      "image": "bench.png",
+      "size": 1,
+      "obstacle": true,
+      "interaction": {
+        "type": "chat",
+        "message": "A peaceful bench to rest.",
+        "status_changes": {
+          "energy": 10,
+          "happiness": 5
+        }
+      }
+    }
+  ],
+  "spawn_points": [
+    {"x": 5, "y": 5}
+  ]
+}

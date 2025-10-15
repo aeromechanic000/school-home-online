@@ -1,0 +1,43 @@
+{
+  "name": "library",
+  "width": 20,
+  "height": 15,
+  "floor_texture": "floor.png",
+  "items": [
+    {
+      "name": "Exit",
+      "x": 5,
+      "y": 5,
+      "image": "door.png",
+      "size": 1,
+      "obstacle": false,
+      "interaction": {
+        "type": "scene_change",
+        "target_scene": "campus",
+        "target_x": 10,
+        "target_y": 5
+      }
+    },
+    {
+      "name": "Bookshelf",
+      "x": 10,
+      "y": 8,
+      "image": "bookshelf.png",
+      "size": 1,
+      "obstacle": true,
+      "interaction": {
+        "type": "chat",
+        "message": "Lots of interesting books here!",
+        "status_changes": {
+          "happiness": 10
+        },
+        "bag_changes": [
+          {"name": "Book", "image": "book.png"}
+        ]
+      }
+    }
+  ],
+  "spawn_points": [
+    {"x": 5, "y": 5}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "bag_size": 10,
+  "tile_size": 64,
+  "view_width": 15,
+  "view_height": 11,
+  "interaction_distance": 2,
+  "game_speed": 1.0,
+  "day_length_seconds": 300
+}

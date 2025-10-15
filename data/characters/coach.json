@@ -1,0 +1,29 @@
+{
+  "name": "coach",
+  "type": "ai_character",
+  "sprite": "character5.png",
+  "energy": 100,
+  "happiness": 100,
+  "health": 100,
+  "position": {
+    "x": 12,
+    "y": 5,
+    "scene": "campus"
+  },
+  "memory": [],
+  "rules": {
+    "low_energy": {
+      "threshold": 30,
+      "action": "rest"
+    },
+    "low_happiness": {
+      "threshold": 30,
+      "action": "socialize"
+    },
+    "low_health": {
+      "threshold": 30,
+      "action": "eat"
+    }
+  },
+  "bag": []
+}

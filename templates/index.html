@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Town MMO</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+        <div class="login-container">
+            <h1 class="pixel-title">AI TOWN MMO</h1>
+            <div class="login-form">
+                <input type="password" id="token-input" placeholder="Enter Token" class="pixel-input">
+                <button id="login-btn" class="pixel-button">Login</button>
+                <button id="new-game-btn" class="pixel-button">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Setup Screen -->
+    <div id="profile-screen" class="screen hidden">
+        <div class="profile-container">
+            <h2 class="pixel-title">Setup Profile</h2>
+            <div class="profile-form">
+                <label class="pixel-label">Nickname:</label>
+                <input type="text" id="nickname-input" class="pixel-input" maxlength="20">
+                
+                <label class="pixel-label">Character:</label>
+                <div id="character-selector" class="character-grid"></div>
+                
+                <button id="save-profile-btn" class="pixel-button">Start Game</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div class="game-container">
+            <!-- Left Panel - Interaction Area -->
+            <div class="left-panel panel">
+                <div class="panel-header">Interactions</div>
+                <div id="interaction-area" class="interaction-content">
+                    <p class="pixel-text">Approach items to interact...</p>
+                </div>
+            </div>
+
+            <!-- Middle Panel - Game Canvas -->
+            <div class="middle-panel">
+                <div class="status-bar">
+                    <div class="status-item">
+                        <span class="status-label">Energy:</span>
+                        <div class="status-bar-container">
+                            <div id="energy-bar" class="status-bar-fill energy"></div>
+                        </div>
+                        <span id="energy-value" class="status-value">100</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Happiness:</span>
+                        <div class="status-bar-container">
+                            <div id="happiness-bar" class="status-bar-fill happiness"></div>
+                        </div>
+                        <span id="happiness-value" class="status-value">100</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Health:</span>
+                        <div class="status-bar-container">
+                            <div id="health-bar" class="status-bar-fill health"></div>
+                        </div>
+                        <span id="health-value" class="status-value">100</span>
+                    </div>
+                    <div class="status-item music-toggle">
+                        <button id="music-toggle-btn" class="pixel-button-small">🔇 Music OFF</button>
+                    </div>
+                </div>
+                <canvas id="game-canvas" width="960" height="704"></canvas>
+                <div class="controls-hint">
+                    Use Arrow Keys or WASD to move | E to interact | B for bag | Enter to chat | ESC to exit chat
+                </div>
+            </div>
+
+            <!-- Right Panel - Chat History -->
+            <div class="right-panel panel">
+                <div class="panel-header">Chat History</div>
+                <div id="chat-history" class="chat-content"></div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" class="pixel-input" placeholder="Type message...">
+                    <button id="send-chat-btn" class="pixel-button-small">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bag Overlay -->
+        <div id="bag-overlay" class="overlay hidden">
+            <div class="overlay-content">
+                <h3 class="pixel-title">Inventory</h3>
+                <div id="bag-items" class="bag-grid"></div>
+                <button id="close-bag-btn" class="pixel-button">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
